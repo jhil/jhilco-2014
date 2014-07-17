@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// MIXINS //
+
+@red: #ff6666;
+@white: #ffffff;
+
+@sans: 'Open Sans', sans-serif;
+
+.transition (@transition) {
+    -webkit-transition: @transition;  
+    -moz-transition:    @transition;
+    -ms-transition:     @transition; 
+    -o-transition:      @transition;  
+}
+
+.t {
+    .transition (all .2s ease);
+}
+
+
+// BASE //
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: @sans;
+    font-weight: 400;
+}
+
+body {
+    font-size: 100%;
+    line-height: 1.5;
+    text-align: center;
+    background: @red;
+    color: @white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+
+// TYPOGRAPHY
+
+.bold {
+    font-weight: 700;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: @white;
+    .t;
+    &:hover {
+        opacity: .65;
+    }
+    &:focus, &:active {
+        opacity: .5;
+    }
+}
+
+
+// CONTENT + LAYOUT //
+
+
+// FEATURE
+
+.feature {
+    width: 960px;
+    max-width: 90%;
+    margin: 10% auto 0;
+}
+
+#t-hi {
+    position: absolute;
+}
+
+
+ul {
+    margin: 40px auto 0;
+    text-align: center;
+    padding: 0;
+    
+    li {
+        display: inline-block;
+        color: @white;
+        margin: 0;
+        font-size: 20px;
+        .bold;
+        
+
+        a, a:visited {
+            display: block;
+            padding: 10px 20px;
+            line-height: 3;
+            text-decoration: none;
+            color: @white;
+            &:hover {
+                content: attr(description);
+            }
+        }
+    }
+}
+
+ul.links-social {
+    margin-top: 0;
+    li a {
+        padding: 20px;
+        margin: 0;
+        img {
+            display: block;
+        }
+    }
+}
+
+
+// FOOTER //
+
+footer, .footer {
+    margin-top: 40px;
+    font-size: 12px;
+}
+
+
+// SELECTION //
+
+::-moz-selection {
+    background: @white;
+    text-shadow: none;
+}
+
+::selection {
+    background: @white;
+    text-shadow: none;
+}
+
+
+// ANIMATIONS
+
+@-webkit-keyframes flicker {
+  0%    { opacity: 0;   }
+  3%    { opacity: .5;  }
+  6%    { opacity: 0;   }
+  9%    { opacity: .5;  }
+  12%   { opacity: 0;   }
+  60%   { opacity: 0;   }
+  100%  { opacity: 1;   }
+}
+
+@keyframes flicker {
+  0%    { opacity: 0;   }
+  3%    { opacity: .5;  }
+  6%    { opacity: 0;   }
+  9%    { opacity: .5;  }
+  12%   { opacity: 0;   }
+  60%   { opacity: 0;   }
+  100%  { opacity: 1;   }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0%    { opacity: 0;   }
+  100%  { opacity: 1;   }
+}
+
+@keyframes fadeIn {
+  0%    { opacity: 0;   }
+  100%  { opacity: 1;   }
+}
+
+#t-hi {
+    -webkit-animation: fadeInUp 1s ease;
+    -moz-animation:    fadeInUp 1s ease;
+    -o-animation:      fadeInUp 1s ease;
+    animation:         fadeInUp 1s ease;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#t-jhil {
+  -webkit-animation: flicker 2s ease;
+  -moz-animation:    flicker 2s ease;
+  -o-animation:      flicker 2s ease;
+  animation:         flicker 2s ease;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+.links-main {
+    -webkit-animation: fadeInUp 1s ease;
+    -moz-animation:    fadeInUp 1s ease;
+    -o-animation:      fadeInUp 1s ease;
+    animation:         fadeInUp 1s ease;
+    -webkit-animation-delay: 3.25s;
+    animation-delay: 3.25s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.links-social {
+    -webkit-animation: fadeInUp 1s ease;
+    -moz-animation:    fadeInUp 1s ease;
+    -o-animation:      fadeInUp 1s ease;
+    animation:         fadeInUp 1s ease;
+    -webkit-animation-delay: 3.35s;
+    animation-delay: 3.35s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.footer {
+    -webkit-animation: fadeIn 1.5s ease;
+    -moz-animation:    fadeIn 1.5s ease;
+    -o-animation:      fadeIn 1.5s ease;
+    animation:         fadeIn 1.5s ease;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
