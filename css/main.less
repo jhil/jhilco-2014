@@ -11,10 +11,10 @@
 @sans: 'Open Sans', sans-serif;
 
 .transition (@transition) {
-    -webkit-transition: @transition;  
+    -webkit-transition: @transition;
     -moz-transition:    @transition;
-    -ms-transition:     @transition; 
-    -o-transition:      @transition;  
+    -ms-transition:     @transition;
+    -o-transition:      @transition;
 }
 
 .t {
@@ -70,13 +70,19 @@ a, a:visited {
 // FEATURE
 
 .feature {
-    width: 960px;
-    max-width: 90%;
+    max-width: 960px;
+    width: 90%;
     margin: 10% auto 0;
-}
+    position: relative;
+  }
 
 #t-hi {
     position: absolute;
+    width: 100%;
+}
+
+#t-jhil {
+    width: 100%;
 }
 
 
@@ -84,14 +90,14 @@ ul {
     margin: 40px auto 0;
     text-align: center;
     padding: 0;
-    
+
     li {
         display: inline-block;
         color: @white;
         margin: 0;
         font-size: 20px;
         .bold;
-        
+
 
         a, a:visited {
             display: block;
@@ -213,14 +219,14 @@ footer, .footer {
 }
 
 #t-jhil {
-  -webkit-animation: flicker 2s ease;
-  -moz-animation:    flicker 2s ease;
-  -o-animation:      flicker 2s ease;
-  animation:         flicker 2s ease;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+    -webkit-animation: flicker 2s ease;
+    -moz-animation:    flicker 2s ease;
+    -o-animation:      flicker 2s ease;
+    animation:         flicker 2s ease;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 

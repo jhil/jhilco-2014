@@ -48,12 +48,17 @@ a:visited:active {
   opacity: .5;
 }
 .feature {
-  width: 960px;
-  max-width: 90%;
+  max-width: 960px;
+  width: 90%;
   margin: 10% auto 0;
+  position: relative;
 }
 #t-hi {
   position: absolute;
+  width: 100%;
+}
+#t-jhil {
+  width: 100%;
 }
 ul {
   margin: 40px auto 0;
