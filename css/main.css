@@ -1,12 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;
 }
 .t {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
+}
+html {
+  overflow-y: scroll;
 }
 html,
 button,
@@ -20,7 +31,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   text-align: center;
-  background: #ff6666;
+  background: #f47171;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -29,7 +40,9 @@ body {
   font-weight: 700;
 }
 a,
-a:visited {
+a:visited,
+a img,
+a:visited img {
   text-decoration: none;
   color: #ffffff;
   -webkit-transition: all 0.2s ease;
@@ -38,18 +51,24 @@ a:visited {
   -o-transition: all 0.2s ease;
 }
 a:hover,
-a:visited:hover {
-  opacity: .65;
+a:visited:hover,
+a img:hover,
+a:visited img:hover {
+  opacity: .8;
 }
 a:focus,
 a:visited:focus,
+a img:focus,
+a:visited img:focus,
 a:active,
-a:visited:active {
+a:visited:active,
+a img:active,
+a:visited img:active {
   opacity: .5;
 }
 .feature {
-  max-width: 960px;
-  width: 90%;
+  max-width: 780px;
+  width: 75%;
   margin: 10% auto 0;
   position: relative;
 }
@@ -98,6 +117,14 @@ footer,
 .footer {
   margin-top: 40px;
   font-size: 12px;
+  -webkit-user-select: text;
+  /* Chrome all / Safari all */
+  -moz-user-select: text;
+  /* Firefox all */
+  -ms-user-select: text;
+  /* IE 10+ */
+  -o-user-select: text;
+  user-select: text;
 }
 ::-moz-selection {
   background: #ffffff;
@@ -107,23 +134,48 @@ footer,
   background: #ffffff;
   text-shadow: none;
 }
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .feature {
+    width: 50%;
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .feature {
+    margin-top: 20%;
+    width: 75%;
+  }
+  ul.links-main li {
+    display: block;
+  }
+}
 @-webkit-keyframes flicker {
-  0% {
+  00% {
     opacity: 0;
   }
-  3% {
-    opacity: .5;
-  }
-  6% {
-    opacity: 0;
-  }
-  9% {
-    opacity: .5;
+  06% {
+    opacity: 1;
   }
   12% {
     opacity: 0;
   }
-  60% {
+  18% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  72% {
+    opacity: 0;
+  }
+  78% {
+    opacity: 1;
+  }
+  84% {
     opacity: 0;
   }
   100% {
@@ -131,22 +183,28 @@ footer,
   }
 }
 @keyframes flicker {
-  0% {
+  00% {
     opacity: 0;
   }
-  3% {
-    opacity: .5;
-  }
-  6% {
-    opacity: 0;
-  }
-  9% {
-    opacity: .5;
+  06% {
+    opacity: 1;
   }
   12% {
     opacity: 0;
   }
-  60% {
+  18% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  72% {
+    opacity: 0;
+  }
+  78% {
+    opacity: 1;
+  }
+  84% {
     opacity: 0;
   }
   100% {
@@ -196,52 +254,67 @@ footer,
   }
 }
 #t-hi {
-  -webkit-animation: fadeInUp 1s ease;
-  -moz-animation: fadeInUp 1s ease;
-  -o-animation: fadeInUp 1s ease;
-  animation: fadeInUp 1s ease;
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s;
+  -webkit-animation: fadeInUp .75s ease;
+  -moz-animation: fadeInUp .75s ease;
+  -o-animation: fadeInUp .75s ease;
+  animation: fadeInUp .75s ease;
+  -webkit-animation-delay: .25s;
+  animation-delay: .25s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 #t-jhil {
-  -webkit-animation: flicker 2s ease;
-  -moz-animation: flicker 2s ease;
-  -o-animation: flicker 2s ease;
-  animation: flicker 2s ease;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation: fadeInUp .75s ease;
+  -moz-animation: fadeInUp .75s ease;
+  -o-animation: fadeInUp .75s ease;
+  animation: fadeInUp .75s ease;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 .links-main {
-  -webkit-animation: fadeInUp 1s ease;
-  -moz-animation: fadeInUp 1s ease;
-  -o-animation: fadeInUp 1s ease;
-  animation: fadeInUp 1s ease;
-  -webkit-animation-delay: 3.25s;
-  animation-delay: 3.25s;
+  -webkit-animation: fadeInUp .75s ease;
+  -moz-animation: fadeInUp .75s ease;
+  -o-animation: fadeInUp .75s ease;
+  animation: fadeInUp .75s ease;
+  -webkit-animation-delay: 2.25s;
+  animation-delay: 2.25s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 .links-social {
-  -webkit-animation: fadeInUp 1s ease;
-  -moz-animation: fadeInUp 1s ease;
-  -o-animation: fadeInUp 1s ease;
-  animation: fadeInUp 1s ease;
-  -webkit-animation-delay: 3.35s;
-  animation-delay: 3.35s;
+  -webkit-animation: fadeInUp .75s ease;
+  -moz-animation: fadeInUp .75s ease;
+  -o-animation: fadeInUp .75s ease;
+  animation: fadeInUp .75s ease;
+  -webkit-animation-delay: 2.375s;
+  animation-delay: 2.375s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 .footer {
-  -webkit-animation: fadeIn 1.5s ease;
-  -moz-animation: fadeIn 1.5s ease;
-  -o-animation: fadeIn 1.5s ease;
-  animation: fadeIn 1.5s ease;
-  -webkit-animation-delay: 3.5s;
-  animation-delay: 3.5s;
+  -webkit-animation: fadeIn 1s ease;
+  -moz-animation: fadeIn 1s ease;
+  -o-animation: fadeIn 1s ease;
+  animation: fadeIn 1s ease;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f2f2f2;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #f2f2f2;
 }
